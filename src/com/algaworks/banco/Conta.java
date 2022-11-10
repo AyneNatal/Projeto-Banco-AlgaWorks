@@ -35,18 +35,25 @@ public class Conta {
         return saldo;
     }
 
+    protected void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    protected void validarSaldoParaSaque (double valorSaque) {
+        if (getSaldo() < valorSaque) {
+            throw new RuntimeException("Saldo insuficiente");
+        }
+    }
 
     public void sacar (double valorSaque) {
         if (valorSaque <= 0) {
             throw new IllegalArgumentException("Valor do saque deve ser superior a R$ 0,0 (zero reais)");
         }
-        if (saldo < valorSaque) {
-            throw new RuntimeException("Saldo insuficiente");
-        }
+
+        validarSaldoParaSaque(valorSaque);
 
         saldo -= valorSaque;
     }
-
 
     public void depositar (double valorDeposito) {
         if (valorDeposito <= 0) {
