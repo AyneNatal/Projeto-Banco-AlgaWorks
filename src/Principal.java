@@ -10,6 +10,7 @@ public class Principal {
         conta1.setAgencia(1234);
         conta1.setNumero(777888);
 
+        System.out.println("CONTA NORMAL -----------------------");
         conta1.imprimirDemonstrativo();
 
         conta1.depositar(100);
@@ -26,6 +27,7 @@ public class Principal {
         contaInv1.setAgencia(4321);
         contaInv1.setNumero(987555);
 
+        System.out.println("CONTA INVESTIMENTO -----------------------");
         contaInv1.imprimirDemonstrativo();
 
         contaInv1.depositar(100);
@@ -44,6 +46,7 @@ public class Principal {
         contaEs1.setLimiteChequeEspecial(1000);
         contaEs1.setTarifaMensal(90);
 
+        System.out.println("CONTA ESPECIAL -----------------------");
         contaEs1.imprimirDemonstrativo();
 
         contaEs1.depositar(100);
