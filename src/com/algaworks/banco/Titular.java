@@ -25,4 +25,12 @@ public class Titular {
     public String getCpf() {
         return cpf;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                '}';
+    }
 }
