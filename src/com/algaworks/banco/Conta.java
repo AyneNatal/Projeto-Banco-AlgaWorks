@@ -24,7 +24,7 @@ public class Conta {
         return numero;
     }
 
-    public double getSaldo() {
+    public final double getSaldo() {
         return saldo;
     }
 
@@ -44,7 +44,7 @@ public class Conta {
         saldo -= valorSaque;
     }
 
-    public void depositar (double valorDeposito) {
+    public final void depositar (double valorDeposito) { //coloquei final para evitar ser sobreescrito em outras classes
         if (valorDeposito <= 0) {
             throw new IllegalArgumentException("Valor do depósito deve ser superior a R$ 0,0 (zero reais)");
         }
