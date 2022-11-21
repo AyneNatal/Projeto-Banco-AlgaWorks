@@ -1,5 +1,7 @@
 package com.algaworks.banco;
 
+import java.util.Objects;
+
 public class Conta {
     private Titular titular;
     private int agencia;
@@ -69,5 +71,18 @@ public class Conta {
                 ", numero = " + numero +
                 ", saldo = " + saldo +
                 " ]";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Conta)) return false;
+        Conta conta = (Conta) o;
+        return agencia == conta.agencia && numero == conta.numero && Double.compare(conta.saldo, saldo) == 0 && titular.equals(conta.titular);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(titular, agencia, numero, saldo);
     }
 }
